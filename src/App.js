@@ -1,13 +1,11 @@
 import { Component } from 'react'
+import { fetchAllBreeds, fetchDescription, fetchImageSrc } from './api'
 import './App.css'
 import DogCard from './components/DogCard'
-
-import { fetchAllBreeds, fetchImageSrc, fetchDescription } from './api'
-
 import { rawDataToAppData } from './dataConversion'
 import {
-  updateStateWithImageSrc,
   updateStateWithDescription,
+  updateStateWithImageSrc,
 } from './stateUpdaters'
 
 class App extends Component {

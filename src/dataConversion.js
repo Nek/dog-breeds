@@ -1,5 +1,4 @@
 import { flatten } from './utils'
-
 const breedDataToPairs = ([breedName, subbreeds]) =>
   subbreeds.length > 0
     ? subbreeds.map(subBreedName => [breedName, subBreedName])

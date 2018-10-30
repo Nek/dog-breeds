@@ -1,4 +1,5 @@
-import { fetchAllBreeds, fetchImageSrc, fetchDescription } from './api'
+import { fetchAllBreeds, fetchDescription, fetchImageSrc } from './api'
+
 describe('API', () => {
   beforeEach(() => {
     fetch.resetMocks()
