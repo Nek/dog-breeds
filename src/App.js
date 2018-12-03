@@ -1,4 +1,5 @@
-import { Component } from 'react'
+// eslint-disable-next-line
+import React, { Component } from 'react'
 import { fetchAllBreeds, fetchDescription, fetchImageSrc } from './api'
 import './App.css'
 import DogCard from './components/DogCard'
@@ -25,11 +26,19 @@ class App extends Component {
       .then(breeds => {
         breeds
           .map(fetchImageSrc)
-          .map(updateStateWithImageSrc((...args) => this.setState(...args)))
+          .map(
+            updateStateWithImageSrc((updater, callback) =>
+              this.setState(updater, callback),
+            ),
+          )
 
         breeds
           .map(fetchDescription)
-          .map(updateStateWithDescription((...args) => this.setState(...args)))
+          .map(
+            updateStateWithDescription((updater, callback) =>
+              this.setState(updater, callback),
+            ),
+          )
       })
   }
   render() {
